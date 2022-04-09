@@ -8,7 +8,7 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-FROM nginx
+FROM nginxinc/nginx-unprivileged:stable
 
 COPY --from=downloader /tmp/build /usr/share/nginx/html 
 
